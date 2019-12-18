@@ -1,0 +1,35 @@
+#
+# 服务器 配置
+server:
+  # 端口
+  port: 8080
+##
+## Spring Boot 配置
+spring:
+  #
+  # 数据库 配置
+  datasource:
+    # MySQL 数据库配置
+    # 开发时使用：
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    # 开发时使用：
+    url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding?useSSL=false&serverTimezone=GMT%2B8
+    # 生产时使用：
+    # driver-class-name: com.mysql.cj.jdbc.Driver
+    # 生产时使用：
+    # url: jdbc:mysql://127.0.0.1:3306/sharding?useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root
+# MyBatis 配置
+mybatis:
+  # Mapper XML 文件路径
+  mapper-locations: mapper/*Mapper.xml
+  # 实体类路径，可在 Mapper 中使用 实体类名，而非全限定名
+  type-aliases-package: cn.com.xuxiaowei.entity
+#
+# 日志 配置
+logging:
+  level:
+    web: debug
+    cn.com.xuxiaowei: debug
+
