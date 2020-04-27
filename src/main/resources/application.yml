@@ -93,8 +93,10 @@ spring:
       tables:
         # 表名，测试用户表（分库配置）
         test_user:
-          # 表逻辑
-          logic-table: test_user
+          # 表逻辑（由于设置了 actual-data-nodes 属性，此属性可缺省）
+          # logic-table: test_user
+          # 限定数据库与表的范围（指定数据库范围为：1、2、3、4、5、8）
+          actual-data-nodes: sharding-${0..5}.test_user,sharding-8.test_user
           # 数据库逻辑
           database-strategy:
             # 队列
@@ -102,6 +104,10 @@ spring:
               # 字段
               sharding-column: test_user_id
               # 数据库算法
+              # 由于该数据库算法的结果范围在 0-5 之间，而数据库的范围时 1-5、8，
+              # 所以在根据分表分库字段查询时，只会在数据库 0-5 之间，
+              # 而不根据分表分库查询时，会查询数据库 1-5、8
+              # 注意：如果数据库算法结果不在限定数据库范围内，会产生异常：Caused by: java.lang.IllegalStateException: no database route info
               algorithm-expression: sharding-${test_user_id % 10}
         # 表名，测试QQ号表（不分表、不分库）
         test_qq:
