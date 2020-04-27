@@ -19,6 +19,90 @@ server:
 #
 # Spring Boot 配置
 spring:
+  #
+  # Sharding-Jdbc
+  shardingsphere:
+    # 数据源
+    datasource:
+      names: sharding-0,sharding-1,sharding-2,sharding-3,sharding-4,sharding-5,sharding-6,sharding-7,sharding-8,sharding-9
+      sharding-0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-0?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-1?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-2:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-2?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-3:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-3?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-4:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-4?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-5:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-5?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-6:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-6?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-7:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-7?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-8:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-8?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+      sharding-9:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+        jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-9?useSSL=false&serverTimezone=GMT%2B8
+        username: root
+        password: root
+    sharding:
+      tables:
+        # 表名
+        test_user:
+          # 表逻辑
+          logic-table: test_user
+          # 数据库逻辑
+          database-strategy:
+            # 队列
+            inline:
+              # 字段
+              sharding-column: test_user_id
+              # 数据库算法
+              algorithm-expression: sharding-${test_user_id % 10}
+    # 属性
+    props:
+      # 显示 SQL
+      sql.show: true
 #
 #  # 数据库 配置
 #  datasource:
