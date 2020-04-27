@@ -17,45 +17,59 @@
     <properties>
         <java.version>1.8</java.version>
 
-        <!-- MyBatis Generator 配置文件位置 -->
-        <mybatis.generator.configurationFile>
-            ${basedir}/src/main/resources/mybatis/generatorConfig.xml
-        </mybatis.generator.configurationFile>
+        <!-- MyBatis Plus 代码生成器 依赖 -->
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-generator -->
+        <mybatis-plus-boot-starter.verssion>3.3.1</mybatis-plus-boot-starter.verssion>
+        <!-- https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter -->
+        <dynamic-datasource-spring-boot-starter.version>3.0.0</dynamic-datasource-spring-boot-starter.version>
+        <!-- Spring Boot Starter Velocity 模板引擎, 默认 -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-velocity -->
+        <spring-boot-starter-velocity.version>1.4.7.RELEASE</spring-boot-starter-velocity.version>
+        <!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
+        <p6spy.version>3.8.7</p6spy.version>
+
+        <!-- 打包时跳过单元测试 -->
+        <skipTests>true</skipTests>
 
     </properties>
 
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus-boot-starter.verssion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-generator -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>${mybatis-plus-boot-starter.verssion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+            <version>${dynamic-datasource-spring-boot-starter.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-velocity -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-velocity</artifactId>
+            <version>${spring-boot-starter-velocity.version}</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
         <dependency>
             <groupId>p6spy</groupId>
             <artifactId>p6spy</artifactId>
-            <version>3.8.6</version>
+            <version>${p6spy.version}</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator -->
-        <dependency>
-            <groupId>org.mybatis.generator</groupId>
-            <artifactId>mybatis-generator</artifactId>
-            <version>1.4.0</version>
-            <type>pom</type>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-maven-plugin -->
-        <dependency>
-            <groupId>org.mybatis.generator</groupId>
-            <artifactId>mybatis-generator-maven-plugin</artifactId>
-            <version>1.4.0</version>
-        </dependency>
-
-        <!-- 仅 generatorConfig.xml 中 targetRuntime 为 MyBatis3DynamicSql 时生成的代码才需要 -->
-        <!-- https://mvnrepository.com/artifact/org.mybatis.dynamic-sql/mybatis-dynamic-sql -->
-        <dependency>
-            <groupId>org.mybatis.dynamic-sql</groupId>
-            <artifactId>mybatis-dynamic-sql</artifactId>
-            <version>1.1.4</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -68,7 +82,7 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.1.1</version>
+            <version>2.1.2</version>
         </dependency>
 
         <dependency>
@@ -101,24 +115,6 @@
 
     <build>
         <plugins>
-
-            <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator -->
-            <!-- https://mvnrepository.com/artifact/org.mybatis.generator/mybatis-generator-maven-plugin -->
-            <plugin>
-                <groupId>org.mybatis.generator</groupId>
-                <artifactId>mybatis-generator-maven-plugin</artifactId>
-                <version>1.4.0</version>
-
-                <dependencies>
-                    <dependency>
-                        <groupId>mysql</groupId>
-                        <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.18</version>
-                    </dependency>
-                </dependencies>
-
-            </plugin>
-
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
