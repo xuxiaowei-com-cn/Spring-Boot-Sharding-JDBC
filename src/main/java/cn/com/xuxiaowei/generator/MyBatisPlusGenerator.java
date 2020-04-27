@@ -58,7 +58,7 @@ public class MyBatisPlusGenerator {
     /**
      * 数据库 地址
      */
-    private String url = "jdbc:mysql://127.0.0.1:3306/sharding?useSSL=false&serverTimezone=GMT%2B8";
+    private String url = "jdbc:mysql://127.0.0.1:3306/sharding-1?useSSL=false&serverTimezone=GMT%2B8";
 
     /**
      * 数据库 用户名
