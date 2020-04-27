@@ -103,6 +103,20 @@ spring:
               sharding-column: test_user_id
               # 数据库算法
               algorithm-expression: sharding-${test_user_id % 10}
+        # 表名，测试QQ号表（不分表、不分库）
+        test_qq:
+          # logic-table: test_qq
+          # 限定分库范围，不填默认为全部数据库
+          # 由于限定了只有一个数据库的一张表，可缺省字段、表名与数据库算法
+          actual-data-nodes: sharding-1.test_qq
+          # 数据库逻辑
+          # database-strategy:
+          #  # 队列
+          #  inline:
+          #    # 字段
+          #    sharding-column: test_qq_id
+          #    # 数据库算法
+          #    algorithm-expression: sharding-1
     # 属性
     props:
       # 显示 SQL
