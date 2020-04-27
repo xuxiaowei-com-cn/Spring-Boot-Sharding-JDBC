@@ -54,3 +54,7 @@ server.port=8088
 user.admin.username=admin
 user.admin.password=admin
 ~~~
+
+## [下载页面](https://shardingsphere.apache.org/document/current/cn/downloads/)
+
+## [全版本](https://archive.apache.org/dist/incubator/shardingsphere/)
