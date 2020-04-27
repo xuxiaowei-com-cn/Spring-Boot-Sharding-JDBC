@@ -22,7 +22,7 @@ spring:
   #
   # Sharding-Jdbc
   shardingsphere:
-    # 数据源
+    # 分表分库 数据源
     datasource:
       names: sharding-0,sharding-1,sharding-2,sharding-3,sharding-4,sharding-5,sharding-6,sharding-7,sharding-8,sharding-9
       sharding-0:
@@ -85,9 +85,11 @@ spring:
         jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/sharding-9?useSSL=false&serverTimezone=GMT%2B8
         username: root
         password: root
+    # 分表分库
     sharding:
+      # 表配置
       tables:
-        # 表名
+        # 表名（分库配置）
         test_user:
           # 表逻辑
           logic-table: test_user
