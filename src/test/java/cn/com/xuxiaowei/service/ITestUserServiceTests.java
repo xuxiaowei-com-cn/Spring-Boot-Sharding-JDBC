@@ -21,6 +21,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 /**
  * 测试用户表 服务类 测试类
  *
@@ -41,6 +43,17 @@ class ITestUserServiceTests {
     void getById() {
         TestUser testUser = iTestUserService.getById(1);
         log.info(String.valueOf(testUser));
+    }
+
+    /**
+     * 查询所有
+     */
+    @Test
+    void list() {
+        List<TestUser> testUserList = iTestUserService.list();
+        for (TestUser testUser : testUserList) {
+            log.info(String.valueOf(testUser));
+        }
     }
 
 }
