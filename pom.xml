@@ -33,6 +33,14 @@
         <!-- https://mvnrepository.com/artifact/org.apache.shardingsphere/sharding-jdbc-spring-boot-starter -->
         <sharding-jdbc-spring-boot-starter.version>4.0.1</sharding-jdbc-spring-boot-starter.version>
 
+        <!-- 防止 Java 8 时间类型的属性异常： -->
+        <!-- org.springframework.dao.InvalidDataAccessApiUsageException: Error attempting to get column 'create_date' from result set.
+            Cause: java.sql.SQLFeatureNotSupportedException: getObject with type;
+            getObject with type;
+            nested exception is java.sql.SQLFeatureNotSupportedException: getObject with type -->
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-typehandlers-jsr310 -->
+        <mybatis-typehandlers-jsr310.version>1.0.2</mybatis-typehandlers-jsr310.version>
+
         <!-- 打包时跳过单元测试 -->
         <skipTests>true</skipTests>
 
@@ -80,6 +88,13 @@
             <groupId>org.apache.shardingsphere</groupId>
             <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
             <version>${sharding-jdbc-spring-boot-starter.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-typehandlers-jsr310 -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-typehandlers-jsr310</artifactId>
+            <version>${mybatis-typehandlers-jsr310.version}</version>
         </dependency>
 
         <dependency>
