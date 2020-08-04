@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.6.RELEASE</version>
+        <version>2.3.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cn.com.xuxiaowei</groupId>
@@ -20,18 +20,18 @@
         <!-- MyBatis Plus 代码生成器 依赖 -->
         <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
         <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-generator -->
-        <mybatis-plus-boot-starter.verssion>3.3.1</mybatis-plus-boot-starter.verssion>
+        <mybatis-plus-boot-starter.verssion>3.3.2</mybatis-plus-boot-starter.verssion>
         <!-- https://mvnrepository.com/artifact/com.baomidou/dynamic-datasource-spring-boot-starter -->
         <!--<dynamic-datasource-spring-boot-starter.version>3.0.0</dynamic-datasource-spring-boot-starter.version>-->
         <!-- Spring Boot Starter Velocity 模板引擎, 默认 -->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-velocity -->
         <spring-boot-starter-velocity.version>1.4.7.RELEASE</spring-boot-starter-velocity.version>
         <!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
-        <p6spy.version>3.8.7</p6spy.version>
+        <p6spy.version>3.9.1</p6spy.version>
 
         <!-- Sharding Jdbc -->
         <!-- https://mvnrepository.com/artifact/org.apache.shardingsphere/sharding-jdbc-spring-boot-starter -->
-        <sharding-jdbc-spring-boot-starter.version>4.0.1</sharding-jdbc-spring-boot-starter.version>
+        <sharding-jdbc-spring-boot-starter.version>4.1.1</sharding-jdbc-spring-boot-starter.version>
 
         <!-- 防止 Java 8 时间类型的属性异常： -->
         <!-- org.springframework.dao.InvalidDataAccessApiUsageException: Error attempting to get column 'create_date' from result set.
